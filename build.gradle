@@ -53,5 +53,5 @@ testSets {
 
 
 // Define the main class for the application
-mainClassName = 'App'
+mainClassName = 'com.example.App'
 
