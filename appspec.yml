@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 hooks:
   ApplicationStart:
-    - location: /bin/spring-bdd-ddd-demo
+    - location: spring-bdd-ddd-demo.jar
       timeout: 1800
       runas: deploy
 
