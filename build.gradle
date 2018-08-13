@@ -15,6 +15,9 @@ plugins {
 
 apply plugin: 'java'
 // Apply the application plugin to add support for building an application
+// https://docs.gradle.org/current/userguide/application_plugin.html
+// application plugin implicitly add java and distribution plugins, 
+// the latter will create main distribution zip file in build/distributions folder
 apply plugin: 'application'
 apply plugin: 'io.spring.dependency-management'
 
@@ -38,6 +41,7 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-dependencies:2.0.4.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
@@ -50,6 +54,13 @@ testSets {
     integrationTest
 }
 
+distributions {
+	main {
+		contents {
+			from { 'AppSpec.yml' }
+		}
+	}
+}
 
 
 // Define the main class for the application
