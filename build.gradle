@@ -57,7 +57,7 @@ testSets {
 distributions {
 	main {
 		contents {
-			from { 'AppSpec.yml' }
+			from { 'appspec.yml' }
 		}
 	}
 }
