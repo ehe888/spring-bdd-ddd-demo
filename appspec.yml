@@ -1,11 +1,8 @@
 version: 0.0
 os: linux
-files:
-  - source: /
-    destination: /webapps
 hooks:
   ApplicationStart:
-    - location: /webapps/bin/spring-bdd-ddd-demo
+    - location: /bin/spring-bdd-ddd-demo
       timeout: 300
       runas: deploy
 
