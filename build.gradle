@@ -9,16 +9,11 @@
 // In this section you declare where to find the dependencies of your project
 
 plugins {
-    id 'org.springframework.boot' version '2.0.4.RELEASE' apply false
+    id 'org.springframework.boot' version '2.0.4.RELEASE'
     id 'org.unbroken-dome.test-sets' version '1.5.1'
 }
 
 apply plugin: 'java'
-// Apply the application plugin to add support for building an application
-// https://docs.gradle.org/current/userguide/application_plugin.html
-// application plugin implicitly add java and distribution plugins, 
-// the latter will create main distribution zip file in build/distributions folder
-apply plugin: 'application'
 apply plugin: 'io.spring.dependency-management'
 
 sourceCompatibility = 1.8
@@ -54,15 +49,8 @@ testSets {
     integrationTest
 }
 
-distributions {
-	main {
-		contents {
-			from { 'appspec.yml' }
-		}
-	}
+task copyAppspec(type: Copy) {
+	from file("appspec.yml")
+	into "${buildDir}/libs"
 }
-
-
-// Define the main class for the application
-mainClassName = 'com.example.App'
 

@@ -3,7 +3,7 @@ os: linux
 hooks:
   ApplicationStart:
     - location: /bin/spring-bdd-ddd-demo
-      timeout: 300
+      timeout: 1800
       runas: deploy
 
   
