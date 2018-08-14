@@ -1,5 +1,8 @@
 version: 0.0
 os: linux
+files:
+  source: /
+  destination: /webapps/spring-bdd-ddd-demo
 hooks:
   ApplicationStart:
     - location: spring-bdd-ddd-demo.jar
